@@ -17,6 +17,31 @@ class Api::V1::RestaurantsController < Api::V1::BaseController
     end
   end
 
+  # update on CLI
+
+  # curl -i -X PATCH                                        \
+  #      -H 'Content-Type: application/json'              \
+  #      -H 'X-User-Email: seb@lewagon.org'               \
+  #      -H 'X-User-Token: a6hYpzsfNJdYC6zEMxs3'          \
+  #      -d '{ "restaurant": { "name": "New name" } }'    \
+  #      http://localhost:3000/api/v1/restaurants/1
+
+  # update on Postman
+
+  # verb: PATCH
+  # url: http://localhost:3000/api/v1/restaurants/1
+
+  #headers:
+
+  # key: Content-Type value: application/json
+  # key: X-User-Email value: neto@teste.com.br
+  # key: X-User-Token value: yMC416U4sovtYnxAfDgb
+
+  # body (set as raw)
+
+  # { "restaurant": { "name": "Le Wagon Food" } }
+
+
   private
 
   def set_restaurant
