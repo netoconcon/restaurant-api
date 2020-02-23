@@ -20,4 +20,8 @@ class RestaurantPolicy < ApplicationPolicy
     # only restaurant owner can update it
     record.user == user
   end
+
+  def destroy?
+    update? # same authorization of update
+  end
 end
