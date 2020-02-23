@@ -5,7 +5,7 @@ class RestaurantPolicy < ApplicationPolicy
     end
 
     def show?
-       true # allow everyone to see show view
+      true
     end
 
   end
