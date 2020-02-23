@@ -9,6 +9,28 @@ class Api::V1::RestaurantsController < Api::V1::BaseController
   def show
   end
 
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user = current_user
+    authorize @restaurant
+    if @restaurant.save
+      render :show
+    else
+      render_error
+    end
+  end
+
+  # On Postman
+
+  # verb: Post
+  # url: http://localhost:3000/api/v1/restaurants
+
+  # key: Content-Type value: application/json
+  # key: X-User-Email value: neto@teste.com.br
+  # key: X-User-Token value: yMC416U4sovtYnxAfDgb
+
+  # { "restaurant": { "name": "New Pizza", "address": "London 2" } }
+
   def update
     if @restaurant.update(restaurant_params)
       render :show
