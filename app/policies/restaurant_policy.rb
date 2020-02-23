@@ -3,10 +3,9 @@ class RestaurantPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def show?
-      true
-    end
-
+  def show?
+    true
   end
 end
